@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import 
+from .views import TeamLeadersListView, TeamLeadersDetail, AgentsListView, AgentsDetail
 
 app_name = "agents"
 
 urlpatterns = [
-    path("", ChartsListView.as_view(), name="charts"),
+    path("agents_list/", AgentsListView.as_view(), name="agents"),
+    path("team_leders_list/", AgentsListView.as_view(), name="agents"),
 ]

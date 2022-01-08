@@ -26,9 +26,9 @@ schema_view = get_schema_view(
     openapi.Info(
         title="RBAC API",
         default_version="v1",
-        description="Test description",
+        description="Sample Sales CRM that lists agents, team leaders and their detail information such as department, regions e.t.c",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="xavier@snippets.local"),
+        contact=openapi.Contact(email="76.thealchemist@gmail.com"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,
@@ -39,6 +39,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("authentication.urls")),
     path("api/charts/", include("charts.urls")),
+    path("api/agents/", include("agents.urls")),
     path(
         "",
         schema_view.with_ui("swagger", cache_timeout=0),

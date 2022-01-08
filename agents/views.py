@@ -1,16 +1,42 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Chart
-from .serializers import ChartSerializer
+from .models import Agent, TeamLead
+from .serializers import TeamLeadersSerializer, AgentsSerializer
 from rest_framework.permissions import IsAdminUser
 
 
-class ChartsListView(generics.ListCreateAPIView):
-    permission_classes = [IsAdminUser]
-    queryset = Chart.objects.all()
-    serializer_class = ChartSerializer
+class AgentsListView(generics.ListAPIView):
+    """
+    View the list of all agents
+    """
+
+    queryset = Agent.objects.all()
+    serializer_class = AgentsSerializer
 
 
-class ChartDetail(generics.RetrieveDestroyAPIView):
-    queryset = Chart.objects.all()
-    serializer_class = ChartSerializer
+class AgentsCreateView(generics.ListCreateAPIView):
+    """
+    View the list of all agents
+    """
+
+    queryset = Agent.objects.all()
+    serializer_class = AgentsSerializer
+
+
+class TeamLeadersListView(generics.ListAPIView):
+    """
+    View the list of all team leaders
+    """
+
+    queryset = TeamLead.objects.all()
+    serializer_class = TeamLeadersSerializer
+
+
+class AgentsDetail(generics.RetrieveDestroyAPIView):
+    queryset = Agent.objects.all()
+    serializer_class = AgentsSerializer
+
+
+class TeamLeadersDetail(generics.RetrieveDestroyAPIView):
+    queryset = TeamLead.objects.all()
+    serializer_class = TeamLeadersSerializer

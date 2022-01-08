@@ -19,7 +19,7 @@ class TeamLeadersSerializer(serializers.ModelSerializer):
         model = TeamLead
 
 
-class AgentsListSerializer(serializers.ModelSerializer):
+class AgentsSerializer(serializers.ModelSerializer):
     user = serializers.HyperlinkedRelatedField(
         read_only=True,
         view_name="user-detail",
@@ -36,5 +36,5 @@ class AgentsListSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        fields = ("id", "user", "supervisor", "department", "region", "phone_number")
+        fields = ("id", "user", "supervisor", "department", "phone_number")
         model = Agent
