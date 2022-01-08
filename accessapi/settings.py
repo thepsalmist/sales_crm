@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # custom apps
     "authentication.apps.AuthenticationConfig",
     "charts.apps.ChartsConfig",
+    "agents.apps.AgentsConfig",
 ]
 
 MIDDLEWARE = [
